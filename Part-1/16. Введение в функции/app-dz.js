@@ -17,14 +17,14 @@ function multiply(x) {
             res *= arguments[i];
         }
 
-        console.log(res);
+        return res;
     } else {
-        console.log(0);
+        return 0;
     }
 }
 
-multiply(2, 4, 5, 6);
-multiply();
+console.log(multiply(2, 4, 5, 6));
+console.log(multiply());
 
 /*
 * Задание 2
@@ -48,14 +48,14 @@ function reverseString(str) {
         res += strToString[i];
     }
 
-    console.log(res);
+    return res;
 }
 
-reverseString('test');
-reverseString('');
-reverseString(null);
-reverseString(undefined);
-reverseString();
+console.log(reverseString('test'));
+console.log(reverseString(''));
+console.log(reverseString(null));
+console.log(reverseString(undefined));
+console.log(reverseString());
 
 /*
 * Задание 3
@@ -81,10 +81,10 @@ function getCodeStringFromText(str) {
         res += strToString[i].charCodeAt() + " ";
     }
 
-    console.log(res.trim());
+    return res.trim();
 }
 
-getCodeStringFromText("hello");
+console.log(getCodeStringFromText("hello"));
 
 /*
 * Задание 4
@@ -114,18 +114,18 @@ function guessTheNumber(num) {
     let numRandom = '';
 
     if (isNaN(strToNum)) {
-        return console.error("Please provide a valid number");
+        return new Error("Please provide a valid number");
     } else if (strToNum < 0 || strToNum > 10) {
-        return console.error("Please provide number in range 0 - 10");
+        return new Error("Please provide number in range 0 - 10");
     } else {
         numRandom = Math.floor(Math.random() * (maxRandom - minRandom + 1)) + minRandom;
 
         if (strToNum === numRandom) {
-            return console.log("You win!");
+            return "You win!";
         } else {
-            return console.log(`You are lose, your number is ${strToNum}, the random number is ${numRandom}`);
+            return `You are lose, your number is ${strToNum}, the random number is ${numRandom}`;
         }
     }
 }
 
-guessTheNumber(8);
+console.log(guessTheNumber(8));
