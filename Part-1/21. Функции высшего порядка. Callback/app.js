@@ -38,11 +38,11 @@ function mapArray(arr, fn) {
     return res;
 }
 
-function nameLength(el) { // Функция обработчик
+function nameLength(el) { // Функция обработчик (колбэк)
     return el.length;
 }
 
-function nameToUpperCase(el) { // Функция обработчик
+function nameToUpperCase(el) { // Функция обработчик (колбэк)
     return el.toUpperCase();
 }
 
