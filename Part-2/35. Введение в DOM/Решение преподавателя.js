@@ -36,20 +36,20 @@
 * Для навигации по DOM использовать методы, которые возвращают только элементы
 */
 
-console.log(document.head); // 1
-console.log(document.body); // 2
-console.log(document.body.children); // 3
-
-// 4-а
-const childNodes = document.querySelector('div').childNodes;
-console.log(childNodes);
-
-// 4-б
-const arrChildNodes = [];
-for (let i = 1; i < childNodes.length - 1; ++i) {
-    arrChildNodes.push(childNodes[i]);
-}
-console.log(arrChildNodes);
+//1
+console.log(document.head);
+//2
+console.log(document.body);
+//3
+console.log(document.body.children);
+//4.а
+console.log(document.body.firstElementChild);
+console.log(document.body.firstElementChild.children);
+// 4.б
+const div = document.body.firstElementChild;
+// При помощи оператора ... мы получаем из коллекции массив который фильтруем сравнивая каждый элемент с первым и последним элементом в div.
+const filteredArticles = [...div.children].filter(p => p !== div.firstElementChild && p !== div.lastElementChild);
+console.log(filteredArticles);
 
 /*
 * Задание 2
@@ -127,7 +127,8 @@ console.log(isParent(document.querySelector('ul'), document.querySelector('mark'
 * Получить список всех ссылок, которые не находятся внутри списка ul.
 */
 
-console.log(document.querySelectorAll('ul a'));
+const filteredLinks = [...document.links].filter(a => !a.closest('ul'));
+console.log(filteredLinks);
 
 /*
 * Задание 4
@@ -137,5 +138,6 @@ console.log(document.querySelectorAll('ul a'));
 * Найти элемент, который находится перед и после списка ul.
 */
 
-console.log(document.querySelector('ul').previousElementSibling);
-console.log(document.querySelector('ul').nextElementSibling);
+const ul = document.querySelector('ul');
+const prev = ul.previousElementSibling;
+const next = ul.nextElementSibling;
