@@ -53,7 +53,7 @@ const obj = {
         this.getAgeArrow = () => console.log(this); // Присваиваем getAgeArrow стрелочную функию
     },
     getAge3() {
-        setTimeout(() => console.log(this)) // Передаём стрелочную функцию как колбэк в setTimeout, без указания времени, тогда вернётся контекст объекта obj
+        setTimeout(() => console.log(this)); // Передаём стрелочную функцию как колбэк в setTimeout, без указания времени, тогда вернётся контекст объекта obj
     },
 }
 
