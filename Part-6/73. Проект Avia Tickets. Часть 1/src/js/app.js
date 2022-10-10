@@ -2,13 +2,14 @@ import '../css/style.css'
 import './plugins'
 import locations from "./store/locations";
 import formUI from "./views/form";
+import ticketUI from "./views/tickets";
 import currencyUI from "./views/currency";
 
 document.addEventListener('DOMContentLoaded', () => {
-    initApp();
     const form = formUI.form;
 
     // Events
+    initApp();
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         onFormSubmit();
@@ -35,5 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return_date,
             currency,
         });
+
+        ticketUI.renderTickets(locations.lastSearch);
     }
 });
