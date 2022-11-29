@@ -1,2 +1,2 @@
 # js-course
-Курс по JS от Udemy
+Современный JavaScript + Vue с нуля на реальных проектах / Denys Mescheryakov
